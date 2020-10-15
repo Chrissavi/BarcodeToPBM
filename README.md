@@ -8,4 +8,6 @@ No error-exceptions added, therefore works only with 1s and 0s.
 
 Use and modify as you like.
 
+Screenshot taken in Photoshop 2020, therefore the strange grid
+
 ![sc](screenshot001.JPG)
