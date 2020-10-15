@@ -22,7 +22,7 @@ void CalculateBarcode()
     barcode << "P1" << endl;
     barcode << width << " " << height << endl;
     
-    // multiply code to get human-readable height
+    // multiplies code to get human-readable height
     for (int i = 0; i < width + 1; i++)
     {
         barcode << code << endl;
