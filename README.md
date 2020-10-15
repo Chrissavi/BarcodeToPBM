@@ -8,4 +8,4 @@ No error-exceptions added, therefore works only with 1s and 0s.
 
 Use and modify as you like.
 
-![screenshot](screenshot001.jpg)
+![sc](screenshot001.JPG)
