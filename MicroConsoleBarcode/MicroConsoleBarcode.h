@@ -22,7 +22,8 @@ string NINE[4]	= { "0001011", "0010111", "1110100", "011010" };
 char STYLE[7];
 string LRMARK	= {"101"};
 string MMARK	= {"01010"};
-
+string CombinedCode[16];
 string GeneratedInternalCode[14];
 void ExtractCode();
-//void CalculateBarcode();
+void CombineCode();
+void CalculateBarcode();

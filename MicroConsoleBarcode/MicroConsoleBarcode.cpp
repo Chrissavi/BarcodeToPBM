@@ -3,7 +3,7 @@
 
 int main()
 {
-    string Usercode = "452698712369";
+    string Usercode = "4526987123692";
     //cin >> Usercode;
     cout << Usercode << endl;
     strcpy_s(InternalCode, Usercode.c_str());
@@ -14,9 +14,12 @@ int main()
     ExtractCode();
     for (int i = 0; i < 14; i++)
         cout << GeneratedInternalCode[i] << endl;
-
     
-
+    CombineCode();
+    for (int i = 0; i < 15; i++)
+        cout << CombinedCode[i] << endl;
+     
+    CalculateBarcode();
     system("pause");
 
     /*
@@ -226,24 +229,35 @@ void ExtractCode()
     }
 }
 
-/*
+void CombineCode()
+{
+    CombinedCode[0] = LRMARK;
+    CombinedCode[1] = GeneratedInternalCode[1];
+    CombinedCode[2] = GeneratedInternalCode[2];
+    CombinedCode[3] = GeneratedInternalCode[3];
+    CombinedCode[4] = GeneratedInternalCode[4];
+    CombinedCode[5] = GeneratedInternalCode[5];
+    CombinedCode[6] = GeneratedInternalCode[6];
+    CombinedCode[7] = MMARK;
+    CombinedCode[8] = GeneratedInternalCode[7];
+    CombinedCode[9] = GeneratedInternalCode[8];
+    CombinedCode[10] = GeneratedInternalCode[9];
+    CombinedCode[11] = GeneratedInternalCode[10];
+    CombinedCode[12] = GeneratedInternalCode[11];
+    CombinedCode[13] = GeneratedInternalCode[12];
+    CombinedCode[14] = LRMARK;
+     
+    
+    
+}
+
+
 void CalculateBarcode()
 {
-    int width = 13;
+    int width = CombinedCode->size();
     int height = 30;
     
-    for (int i = 0; i < 14; i++)
-    {
-        switch (Array[i])
-        {
-        case(Array[0]):
-            break;
-        }
-            
-
-    }
-
-
+    
     ofstream barcode("test.pbm");
     barcode << "P1" << endl;
     barcode << width << " " << height << endl;
@@ -251,9 +265,9 @@ void CalculateBarcode()
     // multiplies code to get human-readable height
     for (int i = 0; i < width + 1; i++)
     {
-        barcode << Array << endl;
+        barcode << CombinedCode << endl;
     }
         
 }
-*/
+
 
