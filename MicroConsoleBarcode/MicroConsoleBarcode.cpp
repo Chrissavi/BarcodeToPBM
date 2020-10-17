@@ -3,23 +3,21 @@
 
 int main()
 {
-    cin >> Usercode;
+    string Usercode = "452698712369";
+    //cin >> Usercode;
     cout << Usercode << endl;
     strcpy_s(InternalCode, Usercode.c_str());
 
+    cout << InternalCode << endl;
+    cout << InternalCode << endl;
+
+    ExtractCode();
     for (int i = 0; i < 14; i++)
-        cout << InternalCode[i];
+        cout << GeneratedInternalCode[i] << endl;
 
-    cout << InternalCode[0] << endl;
-    cout << InternalCode[1] << endl;
-    cout << InternalCode[2] << endl;
-    cout << InternalCode[3] << endl;
-    cout << InternalCode[4] << endl;
-    cout << InternalCode[5] << endl;
-    cout << InternalCode[6] << endl;
-    cout << InternalCode[7] << endl;
+    
 
-
+    system("pause");
 
     /*
     for (int i = 0; i < 3; i++)
@@ -40,83 +38,46 @@ void ExtractCode()
 
     switch (InternalCode[0])
     {
-    case(0): 
-        strcpy_s(STYLE, ZERO[4].c_str());
+    case('0'):
+        strcpy_s(STYLE, ZERO[3].c_str());
         GeneratedInternalCode[0] = ZERO[0];
         break;
-    case(1): 
-        strcpy_s(STYLE, ONE[4].c_str());
+    case('1'):
+        strcpy_s(STYLE, ONE[3].c_str());
         GeneratedInternalCode[0] = ONE[0];
         break;
-    case(2): 
-        strcpy_s(STYLE, TWO[4].c_str());
+    case('2'):
+        strcpy_s(STYLE, TWO[3].c_str());
         GeneratedInternalCode[0] = TWO[0];
         break;
-    case(3): 
-        strcpy_s(STYLE, THREE[4].c_str());
+    case('3'):
+        strcpy_s(STYLE, THREE[3].c_str());
         GeneratedInternalCode[0] = THREE[0];
         break;
-    case(4): 
-        strcpy_s(STYLE, FOUR[4].c_str());
+    case('4'):
+        strcpy_s(STYLE, FOUR[3].c_str());
         GeneratedInternalCode[0] = FOUR[0];
         break;
-    case(5): 
-        strcpy_s(STYLE, FIVE[4].c_str());
+    case('5'):
+        strcpy_s(STYLE, FIVE[3].c_str());
         GeneratedInternalCode[0] = FIVE[0];
         break;
-    case(6): 
-        strcpy_s(STYLE, SIX[4].c_str());
+    case('6'):
+        strcpy_s(STYLE, SIX[3].c_str());
         GeneratedInternalCode[0] = SIX[0];
         break;
-    case(7): 
-        strcpy_s(STYLE, SEVEN[4].c_str());
+    case('7'):
+        strcpy_s(STYLE, SEVEN[3].c_str());
         GeneratedInternalCode[0] = SEVEN[0];
         break;
-    case(8): 
-        strcpy_s(STYLE, EIGHT[4].c_str());
+    case('8'):
+        strcpy_s(STYLE, EIGHT[3].c_str());
         GeneratedInternalCode[0] = EIGHT[0];
         break;
-    case(9): 
-        strcpy_s(STYLE, NINE[4].c_str());
+    case('9'):
+        strcpy_s(STYLE, NINE[3].c_str());
         GeneratedInternalCode[0] = NINE[0];
         break;
-    }
-
-    for (int i = 7; i < 14; i++)
-    {
-        switch (InternalCode[i])
-        {
-        case(0): 
-            GeneratedInternalCode[i] = ZERO[3];
-            break;
-        case(1):
-            GeneratedInternalCode[i] = ONE[3];
-            break;
-        case(2):
-            GeneratedInternalCode[i] = TWO[3];
-            break;
-        case(3):
-            GeneratedInternalCode[i] = THREE[3];
-            break;
-        case(4):
-            GeneratedInternalCode[i] = FOUR[3];
-            break;
-        case(5):
-            GeneratedInternalCode[i] = FIVE[3];
-            break;
-        case(6):
-            GeneratedInternalCode[i] = SIX[3];
-            break;
-        case(7):
-            GeneratedInternalCode[i] = SEVEN[3];
-            break;
-        case(8):
-            GeneratedInternalCode[i] = EIGHT[3];
-            break;
-        case(9):
-            GeneratedInternalCode[i] = NINE[3];
-            break;
-        }
     }
 
     for (int i = 1; i < 7; i++)
@@ -125,18 +86,18 @@ void ExtractCode()
 
         switch (InternalCode[i])
         {
-        case(0): 
-            if (CurrentStyle == 0)
-        {
-            GeneratedInternalCode[i] = ZERO[0];
-        }
-        else
-        {
-            GeneratedInternalCode[i] = ZERO[1];
-        }
+        case('0'):
+            if (CurrentStyle == '0')
+            {
+                GeneratedInternalCode[i] = ZERO[0];
+            }
+            else
+            {
+                GeneratedInternalCode[i] = ZERO[1];
+            }
             break;
-        case(1): 
-            if (CurrentStyle == 0)
+        case('1'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = ONE[0];
             }
@@ -145,8 +106,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = ONE[1];
             }
             break;
-        case(2): 
-            if (CurrentStyle == 0)
+        case('2'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = TWO[0];
             }
@@ -155,8 +116,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = TWO[1];
             }
             break;
-        case(3): 
-            if (CurrentStyle == 0)
+        case('3'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = THREE[0];
             }
@@ -165,8 +126,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = THREE[1];
             }
             break;
-        case(4): 
-            if (CurrentStyle == 0)
+        case('4'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = FOUR[0];
             }
@@ -175,8 +136,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = FOUR[1];
             }
             break;
-        case(5): 
-            if (CurrentStyle == 0)
+        case('5'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = FIVE[0];
             }
@@ -185,8 +146,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = FIVE[1];
             }
             break;
-        case(6): 
-            if (CurrentStyle == 0)
+        case('6'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = SIX[0];
             }
@@ -195,8 +156,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = SIX[1];
             }
             break;
-        case(7): 
-            if (CurrentStyle == 0)
+        case('7'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = SEVEN[0];
             }
@@ -205,8 +166,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = SEVEN[1];
             }
             break;
-        case(8): 
-            if (CurrentStyle == 0)
+        case('8'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = EIGHT[0];
             }
@@ -215,8 +176,8 @@ void ExtractCode()
                 GeneratedInternalCode[i] = EIGHT[1];
             }
             break;
-        case(9): 
-            if (CurrentStyle == 0)
+        case('9'):
+            if (CurrentStyle == '0')
             {
                 GeneratedInternalCode[i] = NINE[0];
             }
@@ -225,9 +186,46 @@ void ExtractCode()
                 GeneratedInternalCode[i] = NINE[1];
             }
             break;
-    }    
-    
+        }
+    }
+    for (int i = 6; i < 14; i++)
+    {
+        switch (InternalCode[i])
+        {
+        case('0'):
+            GeneratedInternalCode[i] = ZERO[2];
+            break;
+        case('1'):
+            GeneratedInternalCode[i] = ONE[2];
+            break;
+        case('2'):
+            GeneratedInternalCode[i] = TWO[2];
+            break;
+        case('3'):
+            GeneratedInternalCode[i] = THREE[2];
+            break;
+        case('4'):
+            GeneratedInternalCode[i] = FOUR[2];
+            break;
+        case('5'):
+            GeneratedInternalCode[i] = FIVE[2];
+            break;
+        case('6'):
+            GeneratedInternalCode[i] = SIX[2];
+            break;
+        case('7'):
+            GeneratedInternalCode[i] = SEVEN[2];
+            break;
+        case('8'):
+            GeneratedInternalCode[i] = EIGHT[2];
+            break;
+        case('9'):
+            GeneratedInternalCode[i] = NINE[2];
+            break;
+        }
+    }
 }
+
 /*
 void CalculateBarcode()
 {

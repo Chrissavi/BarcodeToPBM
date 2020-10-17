@@ -19,10 +19,10 @@ string SEVEN[4] = { "0111011", "0010001", "1000100", "010101" };
 string EIGHT[4] = { "0110111", "0001001", "1001000", "010110" };
 string NINE[4]	= { "0001011", "0010111", "1110100", "011010" };
 
-char STYLE[6];
+char STYLE[7];
 string LRMARK	= {"101"};
 string MMARK	= {"01010"};
 
-string GeneratedInternalCode[13];
-
-void CalculateBarcode();
+string GeneratedInternalCode[14];
+void ExtractCode();
+//void CalculateBarcode();
