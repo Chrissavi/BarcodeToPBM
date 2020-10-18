@@ -19,6 +19,7 @@ string SEVEN[4] = { "0111011", "0010001", "1000100", "010101" };
 string EIGHT[4] = { "0110111", "0001001", "1001000", "010110" };
 string NINE[4]	= { "0001011", "0010111", "1110100", "011010" };
 
+string StrCombinedCode;
 char STYLE[7];
 string LRMARK	= {"101"};
 string MMARK	= {"01010"};

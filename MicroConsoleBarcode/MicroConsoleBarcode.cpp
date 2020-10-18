@@ -246,7 +246,11 @@ void CombineCode()
     CombinedCode[12] = GeneratedInternalCode[11];
     CombinedCode[13] = GeneratedInternalCode[12];
     CombinedCode[14] = LRMARK;
-     
+    
+    for (int i = 0; i < 15; i++)
+    {
+        StrCombinedCode.append(CombinedCode[i]);
+    }
     
     
 }
@@ -254,7 +258,7 @@ void CombineCode()
 
 void CalculateBarcode()
 {
-    int width = CombinedCode->size();
+    int width = StrCombinedCode.size();
     int height = 30;
     
     
@@ -265,7 +269,7 @@ void CalculateBarcode()
     // multiplies code to get human-readable height
     for (int i = 0; i < width + 1; i++)
     {
-        barcode << CombinedCode << endl;
+        barcode << StrCombinedCode << endl;
     }
         
 }
