@@ -23,8 +23,8 @@ string StrCombinedCode;
 char STYLE[7];
 string LRMARK	= {"101"};
 string MMARK	= {"01010"};
-string CombinedCode[16];
+
 string GeneratedInternalCode[14];
 void ExtractCode();
 void CombineCode();
-void CalculateBarcode();
+void PrintBarcode();

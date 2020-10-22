@@ -3,39 +3,23 @@
 
 int main()
 {
-    string Usercode = "4526987123692";
-    //cin >> Usercode;
+    //string Usercode = "4526987123692"; // TESTING CASE
+    cout << "Type in a 13-Digit EAN-Number:" << endl;
+    cin >> Usercode;
     cout << Usercode << endl;
     strcpy_s(InternalCode, Usercode.c_str());
 
-    cout << InternalCode << endl;
-    cout << InternalCode << endl;
-
     ExtractCode();
-    for (int i = 0; i < 14; i++)
-        cout << GeneratedInternalCode[i] << endl;
     
     CombineCode();
-    for (int i = 0; i < 15; i++)
-        cout << CombinedCode[i] << endl;
-     
-    CalculateBarcode();
+        
+    PrintBarcode();
     system("pause");
-
-    /*
-    for (int i = 0; i < 3; i++)
-    {
-        std::cin >> Array;
-    }
-    for (int i = 0; i < 3; i++)
-    {
-        cout << Array << endl;
-    }
-    */
-    //CalculateBarcode();
+       
     return 0;
 }
 
+// Taking input string apart into Array to perform checks on how to encode Barcode output correct
 void ExtractCode()
 {
 
@@ -83,6 +67,7 @@ void ExtractCode()
         break;
     }
 
+    // A Check if EVEN or UNEVEN code msut be used
     for (int i = 1; i < 7; i++)
     {
         char CurrentStyle = STYLE[i];
@@ -190,7 +175,9 @@ void ExtractCode()
             }
             break;
         }
-    }
+    } 
+    
+    // Last six digits are coded only EVEN
     for (int i = 6; i < 14; i++)
     {
         switch (InternalCode[i])
@@ -229,39 +216,37 @@ void ExtractCode()
     }
 }
 
+
 void CombineCode()
 {
-    CombinedCode[0] = LRMARK;
-    CombinedCode[1] = GeneratedInternalCode[1];
-    CombinedCode[2] = GeneratedInternalCode[2];
-    CombinedCode[3] = GeneratedInternalCode[3];
-    CombinedCode[4] = GeneratedInternalCode[4];
-    CombinedCode[5] = GeneratedInternalCode[5];
-    CombinedCode[6] = GeneratedInternalCode[6];
-    CombinedCode[7] = MMARK;
-    CombinedCode[8] = GeneratedInternalCode[7];
-    CombinedCode[9] = GeneratedInternalCode[8];
-    CombinedCode[10] = GeneratedInternalCode[9];
-    CombinedCode[11] = GeneratedInternalCode[10];
-    CombinedCode[12] = GeneratedInternalCode[11];
-    CombinedCode[13] = GeneratedInternalCode[12];
-    CombinedCode[14] = LRMARK;
+    StrCombinedCode.append("0000000000");
+    StrCombinedCode.append(LRMARK);
     
-    for (int i = 0; i < 15; i++)
+    for (int i = 1; i < 7; i++)
     {
-        StrCombinedCode.append(CombinedCode[i]);
+        StrCombinedCode.append(GeneratedInternalCode[i]);
     }
+
+    StrCombinedCode.append(MMARK);
+
+    for (int i = 7; i < 13; i++)
+    {
+        StrCombinedCode.append(GeneratedInternalCode[i]);
+    }
+
+    StrCombinedCode.append(LRMARK);
+        
+    StrCombinedCode.append("0000000000");
     
     
 }
 
 
-void CalculateBarcode()
+void PrintBarcode()
 {
     int width = StrCombinedCode.size();
-    int height = 30;
-    
-    
+    int height = 60;
+        
     ofstream barcode("test.pbm");
     barcode << "P1" << endl;
     barcode << width << " " << height << endl;
@@ -271,7 +256,7 @@ void CalculateBarcode()
     {
         barcode << StrCombinedCode << endl;
     }
-        
+       
 }
 
 
